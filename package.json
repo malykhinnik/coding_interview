@@ -1,0 +1,17 @@
+{
+  "name": "coding_interview",
+  "version": "1.0.0",
+  "description": "nothing interesting, simple tasks and basic solutions",
+  "main": "two_sum.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "jest": "^29.6.1"
+  },
+  "type": "module"
+}
