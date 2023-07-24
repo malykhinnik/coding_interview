@@ -2,7 +2,6 @@
   "name": "coding_interview",
   "version": "1.0.0",
   "description": "nothing interesting, simple tasks and basic solutions",
-  "main": "two_sum.js",
   "scripts": {
     "test": "jest"
   },

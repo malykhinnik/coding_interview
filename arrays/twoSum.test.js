@@ -1,4 +1,4 @@
-import twoSum from "./two_sum.js";
+import twoSum from "./twoSum.js";
 
 test("when search 11 in [1,3,7,9,2] then [3,4]", () => {
     expect(twoSum([1, 3, 7, 9, 2], 11)).toStrictEqual([3, 4]);
