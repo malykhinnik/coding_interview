@@ -1,5 +1,6 @@
 export default trappingRainwater;
 
-function trappingRainwater() {
-    return null;
+function trappingRainwater(arr) {
+    let res = 0;
+    return res;
 };
