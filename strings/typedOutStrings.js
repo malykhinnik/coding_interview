@@ -1,10 +1,50 @@
 export default typedOutStrings;
 
-function typedOutStrings(str1, str2) {
-    var newStr1 = typedOutString(str1);
-    var newStr2 = typedOutString(str2);
-    console.log({"newStr1":newStr1, "newStr2":newStr2})
-    return newStr1 === newStr2;
+function typedOutStrings(s, t) {
+    let si = s.length - 1;
+    let ti = t.length - 1;
+    while (si >= 0 || ti >= 0) {
+        console.log({"si":si,"ti":ti})
+        if (s[si] === '#') {
+            let c = 2;
+            while (c > 0) {
+                si--;
+                c--;
+                console.log({"c":c})
+                if (s[si] === '#') {
+                    c += 2;
+                    console.log({"si again #, c":c})
+                }
+            }
+
+            console.log({"si - #, new si":si})
+        }
+
+        if (t[ti] === '#') {
+            let c = 2;
+            while (c > 0) {
+                ti--;
+                c--;
+                if (t[ti] === '#') {
+                    c += 2;
+                }
+            }
+
+            console.log({"ti - #, new ti":ti})
+        }
+
+        if (s[si] === t[ti]) {
+            si--;
+            ti--;
+            console.log({"new si":si, "new ti":ti})
+        } else {
+            console.log("false")
+            return false;
+        }
+    }
+
+    console.log("true")
+    return true;
 }
 
 function typedOutString(str) {
@@ -15,7 +55,7 @@ function typedOutString(str) {
     for (let i = 0; i < size; i++) {
         const v = str[i];
         console.log({"v":v});
-        if (v === "#") {
+        if (v === '#') {
             if (ni > 0) {
                 ni--;
             }
