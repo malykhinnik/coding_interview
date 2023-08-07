@@ -1,34 +1,34 @@
 export default longestSubString;
 
 function longestSubString(s) {
-    const size = s.length;
+    let size = s.length;
+    if (size <= 1) {
+        return s.length;
+    }
+
+    let arr = {};
+    let R = 0;
     let max = 0;
+    let L = 0;
+
     for (let i = 0; i < size; i++) {
-        let L = s[i];
-        let ri = i + 1;
-        while (ri < size && L !== s[ri]) {
-            ri++;
-        }
-
-        let count = 1;
-        let li = i + 1;
-        while (li < ri) {
-            L = s[li];
-            let newRi = li + 1;
-            while (newRi < ri && L !== s[newRi]) {
-                newRi++;
-            }
-
-            if (newRi < ri) {
-                ri = newRi;
+        const c = s[i];
+        const v = arr[c]
+        if (v === undefined) {
+            arr[c] = i;
+            R = i;
+            max = Math.max(max, R - L + 1);
+        } else {
+            if (v >= L) {
+                L = v + 1;
+                arr[c] = i;
+                R = i;
+                max = Math.max(max, R - L + 1);
             } else {
-                li++;
-                count++;
+                arr[c] = i;
+                R = i;
+                max = Math.max(max, R - L + 1);
             }
-        }
-
-        if (count > max) {
-            max = count;
         }
     }
 
