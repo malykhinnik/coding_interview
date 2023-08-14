@@ -14,22 +14,13 @@ function longestSubString(s) {
     for (let i = 0; i < size; i++) {
         const c = s[i];
         const v = arr[c]
-        if (v === undefined) {
-            arr[c] = i;
-            R = i;
-            max = Math.max(max, R - L + 1);
-        } else {
-            if (v >= L) {
-                L = v + 1;
-                arr[c] = i;
-                R = i;
-                max = Math.max(max, R - L + 1);
-            } else {
-                arr[c] = i;
-                R = i;
-                max = Math.max(max, R - L + 1);
-            }
+        if (v !== undefined && v >= L) {
+            L = v + 1;
         }
+
+        arr[c] = i;
+        R = i;
+        max = Math.max(max, R - L + 1);
     }
 
     return max;
